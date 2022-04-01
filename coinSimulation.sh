@@ -31,7 +31,10 @@ if [[ $headcount -gt $tailcount ]]
 then
 	sub=$((headcount - tailcount));
 	echo "head wins by $sub times";
-else
+elif [[ $tailcount -gt $headcount ]]
+then
 	sub=$((tailcount - headcount));
-	echo "tail wins by $sub times";
+	echo "tail wins by $sub times"
+else
+	echo "continue till the the differnce of 2 achieved";
 fi
