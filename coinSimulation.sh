@@ -3,7 +3,6 @@
 headcount=0;
 tailcount=0;
 
-
 for (( i=0; i<=21; i++ ))
 do
 	coin=$((RANDOM%2))
@@ -27,5 +26,12 @@ else
 	echo "Simulation Tie";
 fi
 
-sub=$((headcount-tailcount))
-echo "win by $sub times"
+
+if [[ $headcount -gt $tailcount ]]
+then
+	sub=$((headcount - tailcount));
+	echo "head wins by $sub times";
+else
+	sub=$((tailcount - headcount));
+	echo "tail wins by $sub times";
+fi
